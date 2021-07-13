@@ -1,0 +1,2 @@
+printf "~00150 1\n\n" > /dev/ttyUSB0
+cat /dev/ttyUSB0

@@ -1,0 +1,2 @@
+printf "~0000 0\n\n" > /dev/ttyUSB0
+echo "Projector OFF cmd sent"

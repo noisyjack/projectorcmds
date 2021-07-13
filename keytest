@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "This will transmit keystrokes to projector as RS232. Keypad is as expected. = will pass enter whilst - will pass back"
+
+
+while true
+do
+escape_char=$(printf "\u1b")
+read -rsn1 mode # get 1 character
+if [[ $mode == $escape_char ]]; then
+    read -rsn4 -t 0.001 mode # read 2 more chars
+fi
+case $mode in
+    '') echo escape ;;
+    '[A') printf "~00140 10\n\n" > /dev/ttyUSB0 ;; #UP
+    '[B') printf "~00140 14\n\n" > /dev/ttyUSB0 ;; #DOWN
+    '[D') printf "~00140 11\n\n" > /dev/ttyUSB0 ;; #Left
+    '[C') printf "~00140 13\n\n" > /dev/ttyUSB0 ;; #Right
+    '=') printf "~00140 12\n\n" > /dev/ttyUSB0 ;; #Enter
+    '-') printf "~00140 20\n\n" > /dev/ttyUSB0 ;; #Menu
+    '') echo backspace ;;
+    *) echo $mode;;
+esac
+done
+

@@ -1,0 +1,5 @@
+printf "~0000 1\n\n" > /dev/ttyUSB0
+echo "Projector ON cmd sent"
+sleep 2
+printf "~0012 5\n\n" > /dev/ttyUSB0
+echo "Projector Input set to VGA"
