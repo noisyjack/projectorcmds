@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "This will transmit keystrokes to projector as RS232. 
-echo "Keypad is as expected. Return will pass eEter whilst - will pass back"
+echo "This will transmit keystrokes to projector as RS232." 
+echo "Keypad is as expected. Return will pass eEter whilst - will pass back."
 
 
 while true
