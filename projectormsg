@@ -1,0 +1,2 @@
+printf "~00210 Penis\n\n" > /dev/ttyUSB0
+echo "Projector Penis cmd sent"
